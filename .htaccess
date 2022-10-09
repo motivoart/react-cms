@@ -1,0 +1,26 @@
+RewriteEngine on
+RewriteBase /
+Options -Indexes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# RewriteRule ^__fBFyVd/(.*)$ /blackwolf/backend/web/$1 [L,NC]
+# RewriteRule ^upload/(.*)$ /blackwolf/upload/$1 [L,NC]
+# RewriteRule ^cache/(.*)$ /blackwolf/cache/$1 [L,NC]
+
+# RewriteRule ^auth/$ /blackwolf/frontend/web/$1 [L,NC]
+# RewriteRule ^api/$ /blackwolf/frontend/web/$1 [L,NC]
+# RewriteRule ^api/(.*)$ /blackwolf/frontend/web/index.php [L,NC]
+# RewriteRule ^bwcms/common/(.*)$ /blackwolf/common/$1 [L,NC]
+
+# RewriteRule ^static/(.*)$ /react/build/static/$1 [L,NC]
+
+# RewriteCond %{REQUEST_URI} !/blackwolf/backend/web/(.*)$
+# RewriteCond %{REQUEST_URI} !/blackwolf/frontend/web/(.*)$
+# RewriteCond %{REQUEST_URI} !/blackwolf/common/(.*)$
+# RewriteCond %{REQUEST_URI} !^/react/build/
+# RewriteCond %{REQUEST_URI} !/upload/(.*)$
+# RewriteCond %{REQUEST_URI} !/cache/(.*)$
+RewriteRule ^(.*)$ /build/index.html [NC,QSA]
+
+RewriteRule ^$ /build/index.html [L,NC]
